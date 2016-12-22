@@ -1,0 +1,50 @@
+$size: 50px;
+:host {
+  display: flex;
+  z-index: 0;
+  height: $size;
+  width: 250px;
+  border-radius: 3px;
+  background-color: rgba(0,0,0,0.02);
+  margin: 5px;
+}
+:host:hover {
+  cursor: pointer;
+  background-color: rgba(0,0,0,0.1);
+}
+a {
+  display: flex;
+  flex-flow: row nowrap;
+  text-decoration: none;
+  color: black;
+}
+.file-icon {
+  height: $size;
+  width: $size;
+  font-size: $size;
+  color: rgba(0,0,0,0.54);
+}
+#content {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+
+#file-details {
+  line-height: 1em;
+  font-size: 1em;
+  display: flex;
+  flex-flow: row nowrap;
+  #file-size {
+    margin-left: 5px;
+    font-size: 0.8em;
+    line-height: 1.6em;
+    color: rgba(0,0,0,0.76);
+  }
+}
+
+#clickToDownload {
+  font-size: 0.8em;
+  margin-top: 5px;
+}
+

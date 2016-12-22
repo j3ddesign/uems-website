@@ -1,0 +1,15 @@
+<template #galleryTemplate>
+  <div id="photo-gallery" [ngClass]="{active: galleryActive}" (click)="galleryActive = false">
+    <img id="largeImage" #largeImage [src]="activeImage.url"/>
+  </div>
+</template>
+
+<md-grid-list cols="5" rowHeight="4:3" gutterSize="5px">
+  <md-grid-tile
+    class="grid-image"
+    *ngFor="let file of (files | async)"
+    (click)="enlargeImage($event, file)"
+    >
+    <div class="imageHolder" [style.backgroundImage]="'url(' + file.url + ')'"></div>
+  </md-grid-tile>
+</md-grid-list>

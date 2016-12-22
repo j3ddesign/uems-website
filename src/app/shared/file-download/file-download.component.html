@@ -1,0 +1,8 @@
+<a href="{{file.pathToFile}}" download>
+<i class="material-icons file-icon">file_download</i>
+<div id="content">
+  <div id="file-details">{{file.name}} <div id="file-size"> ({{file.fileSize}})</div></div>
+  <div id="clickToDownload">Click to download</div>
+</div>
+<iframe style="display: none;" #downloader></iframe>
+</a>

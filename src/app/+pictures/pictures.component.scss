@@ -1,0 +1,48 @@
+:host {
+  display: block;
+  height: 100%;
+  width: calc(100%  - 30px);
+  padding: 15px;
+}
+
+.imageHolder {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.05);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  will-change: transform;
+}
+.grid-image:hover .imageHolder,
+.grid-image:focus .imageHolder {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+#photo-gallery {
+  position: fixed;
+  z-index: 6;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.54);
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+}
+#photo-gallery.active {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+#largeImage {
+  background-size: contain;
+  height: 80%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}

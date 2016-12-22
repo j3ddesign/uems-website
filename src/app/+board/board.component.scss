@@ -1,0 +1,16 @@
+@import '../variables';
+
+:host {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#filterInput {
+  margin: 0 auto;
+}
+
+#dataTable {
+  width: 90%;
+}

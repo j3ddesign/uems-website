@@ -1,0 +1,57 @@
+<div id="locked" *ngIf="locked | async">
+  <h1 class="title">Page is locked.</h1>
+  <!-- HOLD OFF UNTIL MATERIAL UPDATE
+  <md-input-container>
+    <input type="password" #passwordInput (keyup)="checkPassword(passwordInput.value)" placeholder="Password">
+  </md-input-container>
+  -->
+  <md-input type="password" #passwordInput (keyup)="checkPassword(passwordInput.value)" placeholder="Password"></md-input>
+</div>
+
+<div id="unlocked" *ngIf="!(locked | async)">
+  <ngx-datatable
+    #dataTable
+    id="dataTable"
+    class="material"
+    [rows]="files | async | orderBy: ['year']"
+    [rowHeight]="50"
+    [columns]="10"
+    [headerHeight]="50"
+    [footerHeight]="50"
+    [columnMode]="'flex'"
+    [limit]="10"
+    [sorts]="['year']"
+    [cssClasses]="{
+    pagerLeftArrow: 'material-icons mtl-fast-rewind',
+    pagerRightArrow: 'material-icons mtl-fast-forward',
+    pagerPrevious: 'material-icons mtl-skip-previous',
+    pagerNext: 'material-icons mtl-skip-next'
+  }"
+  >
+
+    <ngx-datatable-column prop="location" name="Location" [flexGrow]="1">
+      <template let-row="row" let-value="value" ngx-datatable-cell-template>
+        {{value}}
+      </template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column prop="year" name="Year" [flexGrow]="1">
+      <template let-row="row" let-value="value" ngx-datatable-cell-template>
+        {{value}}
+      </template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column prop="fileName" name="File name" [flexGrow]="2">
+      <template let-row="row" let-value="value" ngx-datatable-cell-template>
+        {{value}}
+      </template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column prop="url" name="Download" [flexGrow]="1">
+      <template let-row="row" let-value="value" ngx-datatable-cell-template>
+        <a md-icon-button target="_blank" download href="{{value}}" [disabled]="!value"><md-icon>link</md-icon></a>
+      </template>
+    </ngx-datatable-column>
+
+  </ngx-datatable>
+</div>

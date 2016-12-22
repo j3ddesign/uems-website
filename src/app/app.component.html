@@ -1,0 +1,22 @@
+<md-sidenav-layout id="layout-wrap">
+
+  <md-sidenav #sidenav id="uems-sidenav" [mode]="sidenavMode" [opened]="sidenavOpened" [ngClass]="{desktop: sidenavOpened}">
+    <header *ngIf="sidenavOpened" id="sidenavheader"></header>
+    <md-nav-list class="sidenav_navlist">
+      <md-list-item class="sidenav__navItem" *ngFor="let navItem of navList" [routerLink]="navItem.destination" (click)="sidenavOpened ? 0 : sidenav.close()">
+        <md-icon md-list-avatar class="navitem__icon">{{navItem.icon}}</md-icon>
+        <h3 md-line class="navitem__header">{{navItem.title}}</h3>
+        <p md-line class="navitem__description">
+          <span>{{navItem.description}}</span>
+        </p>
+      </md-list-item>
+    </md-nav-list>
+  </md-sidenav>
+
+
+  <uems-appbar (openSidenav)="sidenav.open()"></uems-appbar>
+
+
+  <router-outlet></router-outlet>
+
+</md-sidenav-layout>

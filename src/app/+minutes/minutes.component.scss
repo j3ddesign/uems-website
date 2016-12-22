@@ -1,0 +1,22 @@
+:host {
+  display: flex;
+  height: 100%;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#locked {
+  height: 500px;
+  .title {
+    font-variant: small-caps;
+    font-size: 3em;
+    font-weight: 700;
+    color: rgba(0,0,0,0.76);
+  }
+}
+
+#unlocked {
+  height: 80%;
+  width: 80%;
+}

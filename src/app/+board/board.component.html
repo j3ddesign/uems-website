@@ -1,0 +1,67 @@
+<md-input
+  id="filterInput"
+  type="text"
+  style="padding:8px;margin: 15px auto; width: 30%;"
+  placeholder="Type to filter"
+  (keyup)="updateFilter($event)"
+></md-input>
+<ngx-datatable
+  #dataTable
+  id="dataTable"
+  class="material expandable"
+  [rows]="people"
+  [detailRowHeight]="75"
+  [rowHeight]="rowHeight"
+  [columns]="columns"
+  [headerHeight]="50"
+  [footerHeight]="50"
+  [columnMode]="'flex'"
+  [limit]="10"
+  [cssClasses]="{
+    pagerLeftArrow: 'material-icons mtl-fast-rewind',
+    pagerRightArrow: 'material-icons mtl-fast-forward',
+    pagerPrevious: 'material-icons mtl-skip-previous',
+    pagerNext: 'material-icons mtl-skip-next'
+  }"
+>
+
+  <ngx-datatable-row-detail>
+    <template let-row="row" ngx-datatable-row-detail-template>
+      <div style="padding-left:35px;">
+        <div><strong>Address</strong></div>
+        <div>{{row.address ? row.address : ''}}</div>
+      </div>
+    </template>
+  </ngx-datatable-row-detail>
+
+  <ngx-datatable-column prop="country" name="Country" [flexGrow]="1">
+    <template let-row="row" let-value="value" ngx-datatable-cell-template>
+      {{value}}
+    </template>
+  </ngx-datatable-column>
+
+  <ngx-datatable-column prop="name" name="Name" [flexGrow]="1">
+    <template let-row="row" let-value="value" ngx-datatable-cell-template>
+      {{value}}
+    </template>
+  </ngx-datatable-column>
+
+  <ngx-datatable-column prop="telephone" name="Telephone Number" [flexGrow]="2">
+    <template let-row="row" let-value="value" ngx-datatable-cell-template>
+      {{value}}
+    </template>
+  </ngx-datatable-column>
+
+  <ngx-datatable-column prop="email" name="Email Address" [flexGrow]="3">
+    <template let-row="row" let-value="value" ngx-datatable-cell-template>
+      {{value}}
+    </template>
+  </ngx-datatable-column>
+
+  <ngx-datatable-column prop="address" name="Location" [flexGrow]="1">
+    <template let-row="row" let-value="value" ngx-datatable-cell-template>
+      <button md-icon-button (click)="dataTable.toggleExpandRow(row)" [disabled]="!value"><md-icon>room</md-icon></button>
+    </template>
+  </ngx-datatable-column>
+
+</ngx-datatable>

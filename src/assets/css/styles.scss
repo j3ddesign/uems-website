@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'reset';
+@import 'fonts';
+@import '../../../../client-aot/src/app/_breakpoints';
+
+html, body {
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+}
+
+.flex-filler {
+  flex: 1 1 auto;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.animate-on-transforms {
+  transition: transform .3s ease-in-out;
+}
+
+.hide-on-small {
+  @include hide-on-small() {
+    display: none !important;
+  }
+}
+
+.article-header {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  font-size: 2em;
+  line-height: 1em;
+  font-weight: 900;
+  font-variant: all-small-caps;
+  color: rgba(0,0,0,0.65);
+}

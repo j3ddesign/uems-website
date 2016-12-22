@@ -1,0 +1,10 @@
+<md-toolbar color="primary">
+  <button md-icon-button (click)="openSidenav.emit()" *ngIf="windowSize.IS_MOBILE | async"><md-icon>menu</md-icon></button>
+  <span>{{appbar.title$ | async}}</span>
+  <span class="flex-filler"></span>
+  <button md-icon-button [md-menu-trigger-for]="menu" md-tooltip="Links"><i class="material-icons">insert_link</i></button>
+</md-toolbar>
+
+<md-menu #menu="mdMenu">
+  <button md-menu-item *ngFor="let link of usefulLinks" (click)="openPage(link.destination)">{{link.title}}</button>
+</md-menu>
