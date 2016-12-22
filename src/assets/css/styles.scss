@@ -1,7 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'reset';
 @import 'fonts';
-@import '../../../../client-aot/src/app/_breakpoints';
 
 html, body {
   height: 100%;
@@ -18,12 +17,6 @@ html, body {
 
 .animate-on-transforms {
   transition: transform .3s ease-in-out;
-}
-
-.hide-on-small {
-  @include hide-on-small() {
-    display: none !important;
-  }
 }
 
 .article-header {
