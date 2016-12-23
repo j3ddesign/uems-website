@@ -41,7 +41,7 @@ export class WindowSize {
     return Observable.fromEvent(window, 'resize')
       .map(getWindowSize) // map each event to a simple object of {height, width}
       .do(windowSize => {
-        this.IS_MOBILE.next(windowSize > this.mobileWidth);
+        this.IS_MOBILE.next(windowSize.width > this.mobileWidth);
       })
       .startWith(getWindowSize()) // initialize values on page load
       .publishReplay(1)

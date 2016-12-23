@@ -180,7 +180,7 @@ const clientConfig = function webpackConfig(): WebpackConfig {
     );
     if (!E2E && !WATCH) {
       config.plugins.push(
-        new BundleAnalyzerPlugin({analyzerPort: 5000})
+        // new BundleAnalyzerPlugin({analyzerPort: 5000})
       );
     }
   }
