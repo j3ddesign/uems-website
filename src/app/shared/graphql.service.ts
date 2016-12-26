@@ -6,7 +6,7 @@ import { Observable, BehaviorSubject } from 'rxjs';
 @Injectable()
 export class GraphqlService {
   fetching: BehaviorSubject<boolean> = new BehaviorSubject(false);
-  apiUrl: string = 'http://139.162.162.145/graphql';
+  apiUrl: string = 'https://uems-api.streamshape.io/graphql';
   headers: Headers = new Headers({'Content-Type': 'application/json'});
   options: RequestOptions = new RequestOptions({headers: this.headers});
 
