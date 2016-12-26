@@ -2,6 +2,7 @@ import { BehaviorSubject } from 'rxjs';
 
 export class MinutesService {
   pass: string = 'corfu2017';
+
   locked: BehaviorSubject<boolean> = new BehaviorSubject(true);
 
   checkPassword(pass: string) {
