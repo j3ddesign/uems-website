@@ -1,0 +1,46 @@
+sudo: required
+dist: trusty
+language: node_js
+git:
+  depth: 3
+branches:
+  only:
+  - master
+cache:
+  directories:
+  - node_modules
+node_js:
+- '6.4'
+addons: 
+apt:
+  sources:
+  - google-chrome
+  packages:
+  - google-chrome-stable
+  - google-chrome-beta
+before_install:
+- export CHROME_BIN=chromium-browser
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+before_script:
+- npm run compile
+script: npm run ci
+deploy:
+  provider: s3
+  access_key_id: "$AWS_ACCESS_KEY"
+  secret_access_key: "$AWS_SECRET_KEY"
+  bucket: uems-frontend
+  endpoint: uems-frontend.s3-website-eu-central-1.amazonaws.com
+  region: eu-central-1
+  skip_cleanup: true
+  local-dir: dist
+  acl: public_read
+  detect_encoding: true
+  on:
+    branch: master
+
+## Setup notifications
+notifications:
+  email:
+    on_success: change
+    on_failure: change
