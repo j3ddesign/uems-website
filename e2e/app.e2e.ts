@@ -8,7 +8,7 @@ describe('App', () => {
 
   it('should have a title', () => {
     let subject = browser.getTitle();
-    let result  = 'Angular 2 App';
+    let result  = 'UEMS - Endocrinology';
     expect(subject).toEqual(result);
   });
 
