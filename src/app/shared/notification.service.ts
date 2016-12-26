@@ -18,7 +18,7 @@ export class NotificationService {
         if (permission === "granted") {
           const notification = new Notification(message);
         }
-      })
+      });
     }
   }
 }

@@ -9,7 +9,7 @@ import { WindowSize } from '../shared/window-resize.service';
 export class AppBarComponent implements OnInit {
   @Output() openSidenav: EventEmitter<any> = new EventEmitter(); // Output our click events to open the sidenav
 
-  usefulLinks: usefulLink[] = [ // Set our useful links array for parsing into the dropdown menu
+  usefulLinks: UsefulLink[] = [ // Set our useful links array for parsing into the dropdown menu
     {
       title: 'ESE Hormones',
       destination: 'http://www.ese-hormones.org/'
@@ -55,7 +55,7 @@ export class AppBarComponent implements OnInit {
   }
 }
 
-export interface usefulLink {
+export interface UsefulLink {
   title: string;
   destination: string;
 }

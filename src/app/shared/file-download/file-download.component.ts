@@ -7,12 +7,12 @@ import { Component, Input, ViewChild, HostListener } from '@angular/core';
 })
 export class FileDownloadComponent {
   @ViewChild('downloader') downloader: any;
+  @Input() file: IFile;
   @HostListener('click')
   downloadFile() {
     console.log(this.file.pathToFile);
     this.downloader.src = this.file.pathToFile;
   }
-  @Input() file: IFile;
 }
 
 export interface IFile {
