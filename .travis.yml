@@ -33,7 +33,7 @@ deploy:
   endpoint: uems-frontend.s3-website-eu-central-1.amazonaws.com
   region: eu-central-1
   skip_cleanup: true
-  local-dir: dist
+  local-dir: dist/client
   acl: public_read
   detect_encoding: true
   on:
