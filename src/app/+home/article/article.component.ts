@@ -6,9 +6,6 @@ import { FileReference } from '../../shared/graphql.service';
   selector: 'uems-article',
   templateUrl: 'article.component.html',
   styleUrls: ['article.component.css'],
-  host: {
-    ['class.aside-section']: true
-  },
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ArticleComponent {
