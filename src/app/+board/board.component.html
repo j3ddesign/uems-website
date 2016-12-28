@@ -9,7 +9,7 @@
   #dataTable
   id="dataTable"
   class="material expandable"
-  [rows]="people"
+  [rows]="people| orderBy: ['country']"
   [detailRowHeight]="75"
   [rowHeight]="rowHeight"
   [columns]="columns"

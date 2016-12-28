@@ -5,6 +5,7 @@ import { BOARD_ROUTES } from './board.routes';
 import { RouterModule } from '@angular/router';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { MaterialModule } from '@angular/material';
+import { OrderByPipe } from '../shared/order-by.pipe';
 
 @NgModule({
   imports: [
@@ -13,6 +14,9 @@ import { MaterialModule } from '@angular/material';
     CommonModule,
     RouterModule.forChild(BOARD_ROUTES)
   ],
-  declarations: [BoardComponent]
+  declarations: [
+    OrderByPipe,
+    BoardComponent
+  ]
 })
 export class BoardModule { }
