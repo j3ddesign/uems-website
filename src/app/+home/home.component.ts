@@ -14,6 +14,11 @@ export class HomeComponent implements OnInit {
     {name: 'CME 2014.ppt', fileSize: '271.5kb', pathToFile: 'https://s3.eu-central-1.amazonaws.com/uems-endocrinology/CME/CME+2014.ppt'},
   ];
 
+  // Curriculum
+  curriculumFiles: IFile[] = [
+    {name: 'UEMS Endocrionolgy Curriculum 2016', fileSize: '270kb', pathToFile: 'https://s3.eu-central-1.amazonaws.com/uems-endocrinology/curriculum+/UEMS+Endocrinology+Curriculum+2016+Final.pdf'},
+  ];
+
   // Cesma
   cesmaLinks: any[] = [
     {name: 'Go to Cesma webpage', destination: 'https://www.uems.eu/successful-applicants/cesma'}
