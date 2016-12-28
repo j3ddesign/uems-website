@@ -38,6 +38,8 @@ deploy:
   detect_encoding: true
   on:
     branch: master
+after_deploy:
+  - ./.travis/reset_cloudfront_cache.sh $AWS_ACCESS_KEY $AWS_SECRET_KEY
 
 ## Setup notifications
 notifications:

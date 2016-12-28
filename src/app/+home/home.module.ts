@@ -4,6 +4,7 @@ import { HomeComponent } from './home.component';
 import { HOME_ROUTES } from './home.routes';
 import { RouterModule } from '@angular/router';
 import { FileDownloadModule } from '../shared/file-download/file-download.module';
+import { ArticleComponent } from './article/article.component';
 
 @NgModule({
   imports: [
@@ -11,6 +12,9 @@ import { FileDownloadModule } from '../shared/file-download/file-download.module
     FileDownloadModule,
     RouterModule.forChild(HOME_ROUTES)
   ],
-  declarations: [HomeComponent]
+  declarations: [
+    ArticleComponent,
+    HomeComponent
+  ]
 })
 export class HomeModule { }

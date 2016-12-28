@@ -25,43 +25,38 @@
 
 </section>
 <aside id="right-column">
+  <uems-article
+    id="cme"
+    header="CME"
+    subheader="Continuing Medical Education & Professional Development"
+    description="The objectives of UEMS include the promotion of quality patient care through the harmonisation and improvement
+        in the quality of specialists' medical care throughout the European Union and the encouragement and facilitation of CME for European specialists. "
+    [files]="cmeFiles"
+  ></uems-article>
 
-  <section id="cme" class="aside-section">
-    <h1 class="article-header">CME</h1>
-    <small class="subheader">Continuing Medical Education & Professional Development</small>
-    <p>The objectives of UEMS include the promotion of quality patient care through the harmonisation and improvement 
-        in the quality of specialists' medical care throughout the European Union and the encouragement and facilitation of CME for European specialists. 
-</p>
-    <uems-file-download *ngFor="let file of cmeFiles;" [file]="file"></uems-file-download>
-  </section>
-
-  <section id="cesma" class="aside-section">
-    <h1 class="article-header">Cesma / Board exam</h1>
-    <p>European examination in endocrinology</p>
-    <ul id="cesmaLinks">
-      <li *ngFor="let link of cesmaLinks" class="sidebar-link"><a target="_blank" href="{{link.destination}}">{{link.name}}</a></li>
-    </ul>
-  </section>
-
-  <section id="e-learning" class="aside-section">
-    <h1 class="article-header">E-learning</h1>
-    <p>The European Endocrine Update (EEU) is an e-learning tool for continued clinical formation in endocrinology, diabetes and metabolism that addresses the European specialists of the Countries that are part of the UEMS/European Board of Endocrinology and particularly those who may not be able to regularly attend the major European meetings</p>
-    <ul id="e-learning__links">
-      <li *ngFor="let link of eLearningLinks" class="sidebar-link"><a target="_blank" href="{{link.destination}}">{{link.name}}</a></li>
-    </ul>
-    <uems-file-download [file]="eLearningFiles[0]"></uems-file-download>
-  </section>
-
-  <section id="eee-grants" class="aside-section">
-    <h1 class="article-header">EEE-grants</h1>
-    <p>ln order to facilitate within Europe the exchange of trainees specialising in adult Endocrinology and to harmonise and improve the training of endocrinologists, the Section/Board of Endocrinology of the UEMS and Novo Nordisk A/S and Novartis have set up a fellowship program called '3E', the Exchange in Endocrinology Expertise.</p>
-    <uems-file-download *ngFor="let file of eeeGrantsFiles;" [file]="file"></uems-file-download>
-  </section>
-
-  <section id="uems-study" class="aside-section">
-    <h1 class="article-header">UEMS Study</h1>
-    <p>Studies conducted by the UEMS section of Endocrinology </p>
-    <uems-file-download *ngFor="let file of uemsStudyFiles;" [file]="file"></uems-file-download>
-
-  </section>
+  <uems-article
+    id="cesma"
+    header="Cesma / Board exam"
+    subheader="European examination in endocrinology"
+    [links]="cesmaLinks"
+  ></uems-article>
+  <uems-article
+    id="e-learning"
+    header="E-learning"
+    description="The European Endocrine Update (EEU) is an e-learning tool for continued clinical formation in endocrinology, diabetes and metabolism that addresses the European specialists of the Countries that are part of the UEMS/European Board of Endocrinology and particularly those who may not be able to regularly attend the major European meetings"
+    [links]="eLearningLinks"
+    [files]="eLearningFiles"
+  ></uems-article>
+  <uems-article
+    id="eee-grants"
+    header="EEE-grants"
+    description="In order to facilitate within Europe the exchange of trainees specialising in adult Endocrinology and to harmonise and improve the training of endocrinologists, the Section/Board of Endocrinology of the UEMS and Novo Nordisk A/S and Novartis have set up a fellowship program called '3E', the Exchange in Endocrinology Expertise."
+    [files]="eeeGrantsFiles"
+  ></uems-article>
+  <uems-article
+    id="uems-study"
+    header="UEMS Study"
+    subheader="Studies conducted by the UEMS section of Endocrinology"
+    [files]="uemsStudyFiles"
+  ></uems-article>
 </aside>

@@ -1,0 +1,22 @@
+<h1 class="article-header">{{header}}</h1>
+
+<small class="subheader" *ngIf="subheader">{{subheader}}</small>
+
+<p *ngIf="description">{{description}}</p>
+
+<ul id="links" *ngIf="links">
+
+  <li
+    *ngFor="let link of links"
+    class="sidebar-link">
+
+    <a target="_blank"
+       href="{{link.destination}}">
+      {{link.name}}
+    </a>
+
+  </li>
+</ul>
+
+
+<uems-file-download *ngFor="let file of files;" [file]="file"></uems-file-download>
