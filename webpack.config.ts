@@ -225,7 +225,7 @@ const clientConfig = function webpackConfig(): WebpackConfig {
   if (!DLL) {
     config.output = {
       path: root('dist/client'),
-      filename: 'index.js'
+      filename: '[name].[hash].index.js'
     };
   } else {
     config.output = {

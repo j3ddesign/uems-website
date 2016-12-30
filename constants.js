@@ -1,6 +1,7 @@
 "use strict";
 const root = require('./helpers.js').root;
 const ip = require('ip');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 exports.HOST = ip.address();
 exports.DEV_PORT = 3000;
@@ -73,6 +74,11 @@ exports.MY_CLIENT_PLUGINS = [
 
 exports.MY_CLIENT_PRODUCTION_PLUGINS = [
   // use this to import your own webpack config plugins for production use.
+  new HtmlWebpackPlugin({
+    template: 'src/index.html',
+    chunksSortMode: 'dependency',
+    inject: 'head'
+  })
 ];
 
 exports.MY_CLIENT_RULES = [
