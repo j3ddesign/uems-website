@@ -10,7 +10,7 @@ import { IFile } from '../shared/file-download/file-download.component';
 })
 export class HomeComponent implements OnInit {
 
-  endocrinologyArticle = {name: 'Article The Endocrinologist 2016', fileSize: '627.6kb', pathToFile: 'https://s3.eu-central-1.amazonaws.com/uems-endocrinology/The+Endocrinologist+2016+p2.pdf'}
+  endocrinologyArticle = {name: 'Article The Endocrinologist 2016', fileSize: '627.6kb', pathToFile: 'https://s3.eu-central-1.amazonaws.com/uems-endocrinology/The+Endocrinologist+2016+p2.pdf'};
 
   // CME
   cmeFiles: IFile[] = [
