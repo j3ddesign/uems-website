@@ -3,13 +3,13 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
 import { HOME_ROUTES } from './home.routes';
 import { RouterModule } from '@angular/router';
-import { FileDownloadModule } from '../shared/file-download/file-download.module';
 import { ArticleComponent } from './article/article.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
+    SharedModule,
     CommonModule,
-    FileDownloadModule,
     RouterModule.forChild(HOME_ROUTES)
   ],
   declarations: [

@@ -9,6 +9,8 @@ import { IFile } from '../shared/file-download/file-download.component';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
+  endocrinologyFile = {name: 'CME 2014.ppt', fileSize: '271.5kb', pathToFile: 'https://s3.eu-central-1.amazonaws.com/uems-endocrinology/CME/CME+2014.ppt'};
+
   // CME
   cmeFiles: IFile[] = [
     {name: 'CME 2014.ppt', fileSize: '271.5kb', pathToFile: 'https://s3.eu-central-1.amazonaws.com/uems-endocrinology/CME/CME+2014.ppt'},
